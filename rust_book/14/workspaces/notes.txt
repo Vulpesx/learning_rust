@@ -1,0 +1,3 @@
+rust lang - https://rust-lang.org
+starting chapter - https://doc.rust-lang.org/book/ch14
+source - https://github.com/vulpesx/learning_rust
