@@ -1,4 +1,9 @@
 [workspace]
 members = [
     "box-pointer",
+    "as-ref",
+    "drop-trait",
+    "ref-cnt",
+    "ref-cell",
+    "rc-rcell",
 ]
