@@ -6,4 +6,5 @@ members = [
     "ref-cnt",
     "ref-cell",
     "rc-rcell",
+    "ref-cycle",
 ]
