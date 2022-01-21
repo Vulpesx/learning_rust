@@ -49,3 +49,9 @@ fn split_at_mut(slice: &mut [i32], mid: usize) -> (&mut [i32], &mut [i32]) {
     }
 }
 
+unsafe trait Foo {
+}
+
+unsafe impl Foo for i32 {
+}
+

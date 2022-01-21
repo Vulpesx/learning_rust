@@ -3,4 +3,5 @@ members = [
     "unsafe_rust",
     "external_rust",
     "global_rust",
+    "advanced_traits",
 ]
