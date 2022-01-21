@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "unsafe_rust",
+    "external_rust",
+    "global_rust",
+]
