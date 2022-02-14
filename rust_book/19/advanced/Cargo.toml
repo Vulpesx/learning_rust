@@ -4,4 +4,8 @@ members = [
     "external_rust",
     "global_rust",
     "advanced_traits",
+    "advanced_types",
+    "macros",
+    "hello_macro",
+    "hello_macro/hello_macro_derive",
 ]

@@ -1,4 +1,4 @@
-use std::{ops::Add, fmt};
+use std::{ops::{Add, Deref}, fmt};
 
 #[derive(Debug)]
 struct Millimeters(u32);
@@ -16,11 +16,11 @@ trait OutlinePrint: fmt::Display {
     fn outline_print(&self) {
         let output = self.to_string();
         let len = output.len();
-        println!("{}", "-".repeat(len + 4));
-        println!("|{}|", " ".repeat(len + 2));
-        println!("| {} |", output);
-        println!("|{}|", " ".repeat(len + 2));
-        println!("{}", "-".repeat(len + 4));
+        println!("{}", "*".repeat(len + 4));
+        println!("*{}*", " ".repeat(len + 2));
+        println!("* {} *", output);
+        println!("*{}*", " ".repeat(len + 2));
+        println!("{}", "*".repeat(len + 4));
     }
 }
 
@@ -38,6 +38,21 @@ impl fmt::Display for Point {
 
 impl OutlinePrint for Point {}
 
+struct Wrapper(Vec<String>);
+
+impl fmt::Display for Wrapper {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "[{}]", self.0.join(", "))
+    }
+}
+
+impl Deref for Wrapper {
+    type Target = Vec<String>;
+    fn deref(&self) -> &Self::Target {
+        &self.0
+    }
+}
+
 fn main() {
     let a = Millimeters(100);
     let b = Meters(5);
@@ -46,5 +61,8 @@ fn main() {
 
     let p = Point{ x: 3, y: 5};
     p.outline_print();
+
+    let w = Wrapper(vec![String::from("hello"), String::from("world")]);
+    println!("w = {}", w);
 }
 
