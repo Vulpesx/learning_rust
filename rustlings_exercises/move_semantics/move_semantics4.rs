@@ -1,0 +1,21 @@
+// move_semantics4.rs
+// Refactor this code so that instead of having `vec0` and creating the vector
+// in `fn main`, we create it within `fn fill_vec` and transfer the
+// freshly created vector from fill_vec to its caller.
+// Execute `rustlings hint move_semantics4` for hints!
+
+fn main() {
+    let mut vec = fill_vec();
+
+    println!("{} has length {} content `{:?}`", "vec", vec.len(), vec);
+
+    vec.push(88);
+
+    println!("{} has length {} content `{:?}`", "vec", vec.len(), vec);
+}
+
+// `fill_vec()` no longer takes `vec: Vec<i32>` as argument
+fn fill_vec() -> Vec<i32> {
+    let mut vec = vec![22, 44, 66];
+    vec
+}
